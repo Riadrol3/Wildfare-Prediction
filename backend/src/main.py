@@ -3,13 +3,17 @@ from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import sessionmaker
 from typing import List
 from datetime import datetime, timezone
-
+from api_endpoints import app as api_router
 from models import Location, Prediction, HistoricalData
 from database import Base, get_session
 import crud
 import schemas
 
+
 app = FastAPI()
+
+app = FastAPI()
+app.include_router(api_router)
 
 # Database setup
 DATABASE_URL = "postgresql+asyncpg://postgres:Riad108515@localhost/Agile_project"  # Replace with your credentials
