@@ -12,7 +12,7 @@ import schemas
 
 app = FastAPI()
 
-app = FastAPI()
+
 app.include_router(api_router)
 
 # Database setup
